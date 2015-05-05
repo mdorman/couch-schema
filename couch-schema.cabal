@@ -1,0 +1,47 @@
+name:                couch-schema
+version:             0.0.0.0
+synopsis:            Schema files for validating CouchDB output
+description:         Include this as a git submodule in your CouchDB client, and you can easily validate your output during testing
+homepage:            https://github.com/mdorman/couch-schema
+license:             MIT
+license-file:        LICENSE
+author:              Michael Alan Dorman
+maintainer:          mdorman@jaunder.io
+copyright:           Copyright (C) 2015, Michael Alan Dorman <mdorman@jaunder.io>
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  location: https://github.com/mdorman/couch-schema.git
+  type:     git
+
+library
+  build-depends: base > 3 && < 5
+               , aeson
+               , conduit
+               , conduit-combinators
+               , conduit-extra
+               , system-filepath
+               , hjsonschema
+               , resourcet
+               , transformers
+               , vector
+  default-extensions: NoImplicitPrelude
+  default-language: Haskell2010
+  exposed-modules: Database.Couch.Schema
+  ghc-options: -Wall
+  hs-source-dirs: lib
+
+test-suite validate
+  build-depends: base > 3 && < 5
+               , conduit
+               , conduit-combinators
+               , couch-schema
+               , resourcet
+  default-extensions: NoImplicitPrelude
+  default-language: Haskell2010
+  ghc-options: -Wall
+  hs-source-dirs: test
+  main-is: Validate.hs
+  type: exitcode-stdio-1.0
