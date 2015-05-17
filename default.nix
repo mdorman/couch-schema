@@ -1,5 +1,5 @@
 { mkDerivation, aeson, base, conduit, conduit-combinators
-, conduit-extra, hjsonschema, resourcet, stdenv, system-filepath
+, conduit-extra, hjsonschema, resourcet, stdenv, filepath
 , transformers, vector
 }:
 mkDerivation {
@@ -8,7 +8,7 @@ mkDerivation {
   src = ./.;
   buildDepends = [
     aeson base conduit conduit-combinators conduit-extra hjsonschema
-    resourcet system-filepath transformers vector
+    resourcet filepath transformers vector
   ];
   testDepends = [ base conduit conduit-combinators resourcet ];
   homepage = "https://github.com/mdorman/couch-schema";

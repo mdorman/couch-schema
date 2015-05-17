@@ -22,7 +22,7 @@ library
                , conduit
                , conduit-combinators
                , conduit-extra
-               , system-filepath
+               , filepath
                , hjsonschema
                , resourcet
                , transformers
