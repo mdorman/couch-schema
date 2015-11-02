@@ -11,6 +11,7 @@ copyright:           Copyright (C) 2015, Michael Alan Dorman <mdorman@jaunder.io
 category:            Development
 build-type:          Simple
 cabal-version:       >=1.10
+tested-with:         GHC == 7.8.4, GHC == 7.10.2
 
 source-repository head
   location: https://github.com/mdorman/couch-schema.git
