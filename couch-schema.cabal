@@ -23,7 +23,7 @@ library
                , conduit-combinators
                , conduit-extra
                , filepath
-               , hjsonschema >= 0.6
+               , hjsonschema >= 0.8 && < 0.9
                , resourcet
                , transformers
                , vector
