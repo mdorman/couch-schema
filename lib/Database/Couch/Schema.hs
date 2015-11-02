@@ -13,7 +13,8 @@ import           Data.Conduit.Combinators     (sourceFile)
 import           Data.Either                  (Either (Left, Right))
 import           Data.Function                (($))
 import           Data.JsonSchema              (RawSchema (..), isValidSchema)
-import           Data.List                    ((++))
+import           Data.List                    (map, unlines, (++))
+import           Data.Maybe                   (Maybe (Nothing))
 import           GHC.Err                      (error)
 import           System.FilePath              (FilePath)
 import           System.IO                    (putStrLn)
@@ -26,8 +27,8 @@ validate =
     content <- sourceFile file $$ sinkParserEither json
     case content of
       Right (Object o) ->
-        case isValidSchema RawSchema { _rsURI = "", _rsObject = o } of
-          Right _ -> return ()
-          Left e -> error $ show e
-      Right _          -> error $ "Couldn't validate" ++ show content
-      Left e           -> error $ "Couldn't decode " ++ show content ++ show e
+        case isValidSchema RawSchema { _rsURI = Nothing, _rsData = o } of
+          [] -> return ()
+          e -> error $ unlines $ (map show) e
+      Right v          -> error $ "Not a schema object: " ++ show v
+      Left e           -> error $ "Couldn't decode " ++ show e
