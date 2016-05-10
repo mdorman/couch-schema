@@ -24,8 +24,9 @@ library
                , conduit-combinators
                , conduit-extra
                , filepath
-               , hjsonschema >= 0.8 && < 0.9
+               , hjsonschema == 0.10.*
                , resourcet
+               , text
                , transformers
                , vector
   default-extensions: NoImplicitPrelude
