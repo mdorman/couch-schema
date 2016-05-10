@@ -18,7 +18,7 @@ source-repository head
   type:     git
 
 library
-  build-depends: base > 3 && < 5
+  build-depends: base == 4.*
                , aeson
                , conduit
                , conduit-combinators
@@ -35,7 +35,7 @@ library
   hs-source-dirs: lib
 
 test-suite validate
-  build-depends: base > 3 && < 5
+  build-depends: base == 4.*
                , conduit
                , conduit-combinators
                , couch-schema
