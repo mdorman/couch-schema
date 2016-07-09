@@ -18,14 +18,15 @@ source-repository head
   type:     git
 
 library
-  build-depends: base > 3 && < 5
+  build-depends: base == 4.*
                , aeson
                , conduit
                , conduit-combinators
                , conduit-extra
                , filepath
-               , hjsonschema >= 0.8 && < 0.9
+               , hjsonschema == 0.10.*
                , resourcet
+               , text
                , transformers
                , vector
   default-extensions: NoImplicitPrelude
@@ -35,7 +36,7 @@ library
   hs-source-dirs: lib
 
 test-suite validate
-  build-depends: base > 3 && < 5
+  build-depends: base == 4.*
                , conduit
                , conduit-combinators
                , couch-schema
