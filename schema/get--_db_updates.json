@@ -6,7 +6,7 @@
             "type": "string"
         },
         "ok": {
-            "type": "bool"
+            "type": "boolean"
         },
         "type": {
             "enum": ["created", "updated", "deleted"],
