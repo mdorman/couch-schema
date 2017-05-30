@@ -24,7 +24,7 @@ library
                , conduit-combinators
                , conduit-extra
                , filepath
-               , hjsonschema == 0.10.*
+               , hjsonschema >= 1.4
                , resourcet
                , text
                , transformers

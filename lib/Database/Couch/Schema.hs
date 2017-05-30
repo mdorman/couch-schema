@@ -9,14 +9,14 @@ import           Control.Monad.Trans.Resource (MonadResource)
 import           Data.Conduit                 (Sink, awaitForever)
 import           Data.Either                  (Either (Left, Right))
 import           Data.Function                (($))
-import           Data.JsonSchema.Draft4       (SchemaWithURI (..), checkSchema,
-                                               emptySchema,
-                                               referencesViaFilesystem,
-                                               _schemaRef)
 import           Data.List                    ((++))
 import           Data.Maybe                   (Maybe (Just))
 import           Data.Text                    (pack)
 import           GHC.Err                      (error)
+import           JSONSchema.Draft4            (SchemaWithURI (..), checkSchema,
+                                               emptySchema,
+                                               referencesViaFilesystem,
+                                               _schemaRef)
 import           System.FilePath              (FilePath, takeFileName)
 import           System.IO                    (putStrLn)
 import           Text.Show                    (show)
